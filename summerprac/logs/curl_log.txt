@@ -1,0 +1,4 @@
+RESPONSE:
+{"ok":true,"result":{"message_id":51,"from":{"id":7258168451,"is_bot":true,"first_name":"Improve your photo!","username":"sumpractice_bot"},"chat":{"id":868074210,"first_name":"Ilnar","username":"Ilnar_val","type":"private"},"date":1753123372,"document":{"file_name":"D summerpractemp868074210.png","mime_type":"image/png","thumbnail":{"file_id":"AAMCAgADGQMAAzNofoosv-Vy_hnScVie6aLuqIVuHAACJYQAAox2-EvjhWR2-2kYrAEAB20AAzYE","file_unique_id":"AQADJYQAAox2-Ety","file_size":19784,"width":320,"height":320},"thumb":{"file_id":"AAMCAgADGQMAAzNofoosv-Vy_hnScVie6aLuqIVuHAACJYQAAox2-EvjhWR2-2kYrAEAB20AAzYE","file_unique_id":"AQADJYQAAox2-Ety","file_size":19784,"width":320,"height":320},"file_id":"BQACAgIAAxkDAAMzaH6KLL_lcv4Z0nFYnumi7qiFbhwAAiWEAAKMdvhL44VkdvtpGKw2BA","file_unique_id":"AgADJYQAAox2-Es","file_size":280769}}}
+ERROR:
+

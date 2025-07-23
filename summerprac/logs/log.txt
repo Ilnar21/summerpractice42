@@ -1,0 +1,67 @@
+Array
+(
+    [update_id] => 727055216
+    [callback_query] => Array
+        (
+            [id] => 3728350343636840557
+            [from] => Array
+                (
+                    [id] => 868074210
+                    [is_bot] => 
+                    [first_name] => Ilnar
+                    [username] => Ilnar_val
+                    [language_code] => ru
+                )
+
+            [message] => Array
+                (
+                    [message_id] => 252
+                    [from] => Array
+                        (
+                            [id] => 7258168451
+                            [is_bot] => 1
+                            [first_name] => Improve your photo!
+                            [username] => sumpractice_bot
+                        )
+
+                    [chat] => Array
+                        (
+                            [id] => 868074210
+                            [first_name] => Ilnar
+                            [username] => Ilnar_val
+                            [type] => private
+                        )
+
+                    [date] => 1753264075
+                    [text] => Выбери формат:
+                    [reply_markup] => Array
+                        (
+                            [inline_keyboard] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [text] => JPG
+                                                    [callback_data] => jpg
+                                                )
+
+                                            [1] => Array
+                                                (
+                                                    [text] => PNG
+                                                    [callback_data] => png
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [chat_instance] => 7244414179786533283
+            [data] => jpg
+        )
+
+)
