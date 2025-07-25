@@ -48,7 +48,6 @@ function cropToAspect($file_path, $aspect) {
             imagedestroy($src);
             return;
     }
-
     $dst = imagecreatetruecolor($new_w, $new_h);
     imagecopyresampled($dst, $src, 0, 0, $src_x, $src_y, $new_w, $new_h, $new_w, $new_h);
     imagejpeg($dst, $file_path);

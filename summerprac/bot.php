@@ -59,12 +59,20 @@ elseif (isset($update['message']['document'])) {
     exit;
 }
 
+// Обработка кнопок
 if (isset($update['callback_query'])) {
     $data = $update['callback_query']['data'];
     $state = loadState($user_id);
+    $msg_id = $update['callback_query']['message']['message_id'];
+
+    // Удаление старого сообщения с кнопками
+    file_get_contents(API_URL . "/deleteMessage?" . http_build_query([
+            'chat_id' => $chat_id,
+            'message_id' => $msg_id
+        ]));
 
     if (!$state || !$image_path) {
-        sendMessage($chat_id, "Сессия устарела. Отправь изображение заново.");
+        sendMessage($chat_id, "Сессия устарела. Пожалуйста, отправьте изображение заново.");
         exit;
     }
 
@@ -84,11 +92,11 @@ if (isset($update['callback_query'])) {
             applyGrayscale($image_path);
         }
         saveState($user_id, $state);
-        sendMessage($chat_id, "Выбери формат:", [['jpg', 'png']]);
+        sendMessage($chat_id, "Выбери формат:", [['jpg', 'png','tiff']]);
         exit;
     }
 
-    if ($state['format'] === null && in_array($data, ['jpg', 'png'])) {
+    if ($state['format'] === null && in_array($data, ['jpg', 'png','tiff'])) {
         $state['format'] = $data;
         $output = TEMP_DIR . "$user_id.$data";
 
@@ -111,8 +119,21 @@ if (isset($update['callback_query'])) {
                 $img = imagecreatefromgif($image_path);
                 break;
             case 'tiff':
-                sendMessage($chat_id, "TIFF пока не поддерживается.");
-                exit;
+                if (!extension_loaded('imagick')) {
+                    sendMessage($chat_id, "TIFF пока не поддерживается.");
+                    exit;
+                }
+                try {
+                    $imagick = new Imagick($image_path);
+                    $imagick->setImageFormat($data);
+                    $imagick->writeImage($output);
+                    $imagick->clear();
+                    $imagick->destroy();
+                } catch (Exception $e) {
+                    sendMessage($chat_id, "Произошла ошибка при обработке TIFF: " . $e->getMessage());
+                    exit;
+                }
+                break;
             default:
                 sendMessage($chat_id, "Неподдерживаемый формат файла.");
                 exit;

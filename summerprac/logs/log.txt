@@ -1,21 +1,23 @@
 Array
 (
-    [update_id] => 727055216
+    [update_id] => 727055355
     [callback_query] => Array
         (
-            [id] => 3728350343636840557
+            [id] => 148872638540429124
             [from] => Array
                 (
-                    [id] => 868074210
+                    [id] => 34662112
                     [is_bot] => 
-                    [first_name] => Ilnar
-                    [username] => Ilnar_val
+                    [first_name] => Илья
+                    [last_name] => Кошарский
+                    [username] => Elirector
                     [language_code] => ru
+                    [is_premium] => 1
                 )
 
             [message] => Array
                 (
-                    [message_id] => 252
+                    [message_id] => 466
                     [from] => Array
                         (
                             [id] => 7258168451
@@ -26,13 +28,14 @@ Array
 
                     [chat] => Array
                         (
-                            [id] => 868074210
-                            [first_name] => Ilnar
-                            [username] => Ilnar_val
+                            [id] => 34662112
+                            [first_name] => Илья
+                            [last_name] => Кошарский
+                            [username] => Elirector
                             [type] => private
                         )
 
-                    [date] => 1753264075
+                    [date] => 1753459847
                     [text] => Выбери формат:
                     [reply_markup] => Array
                         (
@@ -52,6 +55,12 @@ Array
                                                     [callback_data] => png
                                                 )
 
+                                            [2] => Array
+                                                (
+                                                    [text] => TIFF
+                                                    [callback_data] => tiff
+                                                )
+
                                         )
 
                                 )
@@ -60,8 +69,8 @@ Array
 
                 )
 
-            [chat_instance] => 7244414179786533283
-            [data] => jpg
+            [chat_instance] => -5482620916681253589
+            [data] => tiff
         )
 
 )
